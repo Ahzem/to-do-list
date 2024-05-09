@@ -1,109 +1,123 @@
-/* Base styling for the body and container */
+/* General body styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f7;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
 }
 
+/* Container for the entire app */
 .container {
   width: 100%;
-  max-width: 400px;
-  background-color: #ffffff;
-  padding: 20px;
+  max-width: 700px;
+  background: #1e1e1e; /* Slightly lighter than the background for contrast */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Deeper shadow for depth */
+  padding: 20px;
+  margin: 20px;
 }
 
-/* Styling for the title */
+/* Heading styles */
 h2 {
-  color: #333;
-  font-size: 24px;
+  color: #ffffff; /* White text for headers */
 }
 
-/* Row for input and button */
+/* Styling for the input row with text input and buttons */
 .row {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="date"], input[type="time"], select {
+  flex-grow: 1;
+  padding: 10px;
+  margin-right: 5px;
+  border: 2px solid #333; /* Darker border */
+  border-radius: 5px;
+  background-color: #333; /* Dark input backgrounds */
+  color: #ffffff; /* White text for inputs */
+  font-size: 16px;
 }
 
 input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  font-size: 16px;
-  color: #333;
+  flex-grow: 2;
+}
+
+select {
+  max-width: 100px; /* Limit width of the dropdown */
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #5cb85c;
-  border: none;
-  border-radius: 0 8px 8px 0;
+  padding: 10px 15px;
+  background-color: #007bff; /* Bright color for contrast */
   color: white;
-  font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #4cae4c;
+  background-color: #0056b3; /* Darken on hover */
 }
 
-/* Styling for task list */
+/* Styles for the list of tasks */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
 }
 
 li {
-  background-color: #eee;
-  padding: 15px;
+  background: #333; /* Dark list items for contrast */
+  border: 1px solid #444; /* Slightly lighter border for visibility */
+  padding: 10px;
   margin-top: 5px;
-  cursor: pointer;
-  border-radius: 8px;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
-}
-
-li.checked {
-  background-color: #d6d6d6;
-  text-decoration: line-through;
-  color: #777;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 li:hover {
-  background-color: #d6d6d6;
+  background-color: #454545; /* Lighten on hover for feedback */
 }
 
+/* Styling for tasks that are checked off */
+li.checked {
+  text-decoration: line-through;
+  color: #777; /* Grayed out for checked tasks */
+}
+
+/* Close button for deleting tasks */
 span.close {
-  color: #ff6347;
-  font-size: 18px;
+  color: #ff6347; /* Tomato color for visibility and contrast */
+  margin-left: 15px;
   cursor: pointer;
-  user-select: none;
 }
 
-input[type="date"], input[type="time"] {
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  margin-right: 5px;
-  font-size: 16px;
-  color: #333;
-}
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .container {
+      margin: 10px;
+      width: 95%;
+  }
 
-/* Adjust the width of text input to balance the additional inputs */
-input[type="text"] {
-  flex-grow: 2; /* Allocate more space to text input */
+  input[type="date"], input[type="time"], select {
+      flex-basis: 100%;
+      margin-top: 5px;
+      margin-right: 0;
+  }
+
+  button {
+      flex-basis: 100%;
+      margin-top: 5px;
+  }
 }
