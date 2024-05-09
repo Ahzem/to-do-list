@@ -1,17 +1,17 @@
 # To-Do List Application
 
-This To-Do List application is a simple yet powerful tool to manage day-to-day tasks with the added functionality of setting due dates and times, similar to professional project management tools like Trello or GitHub Projects. It is built using the MVC architecture to ensure a clean separation of concerns between the model (data), view (UI), and controller (logic).
+This To-Do List application is a simple yet powerful tool to manage day-to-day tasks with the added functionality of setting due dates and times, similar to professional project management tools like Trello or GitHub Projects. It utilizes the MVC (Model-View-Controller) architecture to ensure a clean separation of concerns between the data (model), user interface (view), and the logic that handles input and updates (controller).
 
 ## Features
 
-- **Add Tasks**: Users can add tasks with a description, due date, and time.
-- **Delete Tasks**: Users can delete tasks they no longer need.
-- **Toggle Task Completion**: Click on a task to toggle its completion status, striking it through if completed.
-- **Persistent Storage**: Tasks are stored in local storage, so they persist between sessions.
+- **Add Tasks**: Users can input tasks with descriptions, set due dates and times.
+- **Delete Tasks**: Allows for the removal of tasks that are no longer needed.
+- **Toggle Task Completion**: Users can mark tasks as completed or toggle them back to active.
+- **Persistent Storage**: Utilizes local storage to persist tasks across browser sessions.
 
 ## Installation
 
-No installation is necessary. Simply clone this repository and open `index.html` in your web browser to start using the application.
+No installation necessary. Simply clone this repository and open `index.html` in your web browser to start managing your tasks.
 
 ```bash
 git clone https://github.com/Ahzem/to-do-list.git
@@ -22,41 +22,40 @@ open index.html
 ## Usage
 
 1. **Adding a Task**:
-   - Enter the task description in the text input field.
-   - Optionally set a due date and time.
-   - Click the "Add" button or press Enter to add the task to the list.
+   - Type the task description into the text input field.
+   - Optionally, set a due date and time.
+   - Click the "Add" button or press Enter to submit the task to the list.
 
 2. **Toggling Task Completion**:
-   - Click on the task in the list to toggle its completion status.
+   - Click on a task in the list to toggle its completion status, striking it through if completed.
 
 3. **Deleting a Task**:
-   - Click on the '✖' icon next to the task you wish to delete.
+   - Click the '✖' icon next to any task you wish to remove.
 
 ## Technologies Used
 
-- HTML
-- CSS
-- JavaScript
-- LocalStorage for data persistence
+- **HTML**: Structures the web content.
+- **CSS**: Styles the application.
+- **JavaScript**: Powers the application's interactivity and local storage management.
 
 ## File Structure
 
-- `index.html`: The entry point of the application containing the HTML structure.
-- `style.css`: Contains all the styles for the application.
-- MVC
-  - `model.js`: Contains the data model and functions to interact with the data.
-  - `view.js`: Contains functions to update the UI based on the data.
-  - `controller.js`: Contains the application logic and event listeners.
+- `index.html`: The main HTML document.
+- `style.css`: CSS file for styling.
+- `MVC/`: MVC architecture folders.
+  - `model.js`: Manages the data and state of the tasks.
+  - `view.js`: Handles all UI updates.
+  - `controller.js`: Manages user input, integrates the model and view components.
 
 ## Future Enhancements
 
-- **Task Prioritization**: Allow users to set priority levels for tasks.
-- **Task Categories/Tags**: Implement categories or tags for better organization.
-- **Advanced Sorting**: Sort tasks by date, priority, or completion status.
+- **Task Prioritization**: Integrate priority levels for tasks to emphasize task urgency.
+- **Task Categories/Tags**: Add categories or tags for better task organization.
+- **Advanced Sorting**: Implement sorting features to organize tasks by date, priority, or completion status.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Contributions are welcome! For major changes, please open an issue first to discuss what you would like to change or enhance.
 
 ## License
 
