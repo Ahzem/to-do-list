@@ -103,6 +103,49 @@ span.close {
   cursor: pointer;
 }
 
+.task-table {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: table;
+  width: 100%;
+}
+
+.task-table li {
+  display: table-row;
+  background: #333;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+
+.task-table li > div, .task-table li > button {
+  display: table-cell;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.task-table li > div {
+  border-bottom: 1px solid #444;
+}
+
+.task-table li > button {
+  background-color: transparent;
+  color: #ff6347;
+  border: none;
+  cursor: pointer;
+}
+
+.task-table li > button:hover {
+  background-color: #454545;
+}
+
+.task-table li.checked > div {
+  text-decoration: line-through;
+  color: #777;
+}
+
 /* Responsive adjustments */
 @media (max-width: 400px) {
   .container {
@@ -120,4 +163,30 @@ span.close {
       flex-basis: 100%;
       margin-top: 5px;
   }
+
+  li > div {
+      display: block;
+      padding: 10px;
+  }
+
+  li > button {
+      display: block;
+      padding: 10px;
+      margin-top: 5px;
+  }
+
+  li > div {
+      border-bottom: none;
+  }
+
+  .task-table li > div {
+      border-bottom: none;
+  }
+
+  .task-table li > button {
+      display: block;
+      padding: 10px;
+      margin-top: 5px;
+  }
+
 }

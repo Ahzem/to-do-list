@@ -3,37 +3,39 @@ class TaskController {
   constructor(model, view) {
       this.model = model;
       this.view = view;
+      this.view.setController(this); // Ensuring the view has a reference to the controller.
   }
 
   onInit() {
+      // Load tasks from model and display them in the view.
       this.view.displayTasks(this.model.tasks);
   }
 
-  addTask(taskContent, dueDate, dueTime, priority) {
-      this.model.addTask(taskContent, dueDate, dueTime, priority);
+  addTask(content, dueDate, dueTime, priority) {
+      this.model.addTask(content, dueDate, dueTime, priority);
       this.view.displayTasks(this.model.tasks);
-      this.view.addTaskInput.value = '';
-      this.view.datePicker.value = '';
-      this.view.timePicker.value = '';
-      this.view.prioritySelect.value = 'Medium'; // Reset to default priority
   }
 
   removeTask(index) {
       this.model.removeTask(index);
       this.view.displayTasks(this.model.tasks);
   }
-
-  toggleTask(index) {
-      this.model.toggleTask(index);
-      this.view.displayTasks(this.model.tasks);
-  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const model = new TaskModel();
-  const view = new TaskView(model);
+  const view = new TaskView();
   const controller = new TaskController(model, view);
-  view.setController(controller);
-  controller.onInit();  // Ensure this is called after all components are set.
+
+  controller.onInit(); // Now safe to call, as all components are properly initialized.
 });
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const model = new TaskModel(); // Model is initialized first.
+  const view = new TaskView();   // View is initialized second.
+  const controller = new TaskController(model, view); // Controller is initialized last and given references to both model and view.
+
+  view.setController(controller); // Make sure the view knows about the controller.
+  controller.onInit();            // Now call onInit, ensuring all references are set.
+});
