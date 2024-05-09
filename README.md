@@ -1,38 +1,63 @@
-<p align="center">
-  <img src="https://github.com/visionthex/To-Do_List/blob/project/img/DisplayWebsite.png" alt="image1">
-</p>
+# To-Do List Application
 
-[![Version](https://img.shields.io/badge/version-v1.0-blue.svg)](https://github.com/visionthex/to-do-list/releases/tag/v1.0) [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/visionthex/to-do-list/blob/main/CONTRIBUTING.md)
-
-# To-Do-List: Keep track of your stuff!
-This app helps you manage your tasks, making life easier and less stressful.
-
-## What can you do with it?
-
-- Add and delete tasks like a boss.
-- Check things off as you complete them, feeling awesome.
-
-## Get started today and experience the joy of a well-managed life!
-
-__P.S. I love feedback!__ If you have any questions or suggestions, don't hesitate to reach out.
+This To-Do List application is a simple yet powerful tool to manage day-to-day tasks with the added functionality of setting due dates and times, similar to professional project management tools like Trello or GitHub Projects. It is built using the MVC architecture to ensure a clean separation of concerns between the model (data), view (UI), and controller (logic).
 
 ## Features
-- Add and delete tasks
-- Mark tasks as completed or incomplete
+
+- **Add Tasks**: Users can add tasks with a description, due date, and time.
+- **Delete Tasks**: Users can delete tasks they no longer need.
+- **Toggle Task Completion**: Click on a task to toggle its completion status, striking it through if completed.
+- **Persistent Storage**: Tasks are stored in local storage, so they persist between sessions.
 
 ## Installation
-__Note:__ The installation instructions will depend on the specific technology stack used to develop the application. Please refer to the relevant documentation for specific instructions.
 
-## Here is a general example of installation instructions:
-Clone the repository using Git:
+No installation is necessary. Simply clone this repository and open `index.html` in your web browser to start using the application.
 
-`git clone https://github.com/visionthex/to-do-list.git`
+```bash
+git clone https://github.com/Ahzem/to-do-list.git
+cd to-do-list
+open index.html
+```
 
-Install the required dependencies:
+## Usage
 
-`npm install`
+1. **Adding a Task**:
+   - Enter the task description in the text input field.
+   - Optionally set a due date and time.
+   - Click the "Add" button or press Enter to add the task to the list.
 
-Start the application:
+2. **Toggling Task Completion**:
+   - Click on the task in the list to toggle its completion status.
 
-`npm start`
-"# to-do-list" 
+3. **Deleting a Task**:
+   - Click on the '✖' icon next to the task you wish to delete.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- LocalStorage for data persistence
+
+## File Structure
+
+- `index.html`: The entry point of the application containing the HTML structure.
+- `style.css`: Contains all the styles for the application.
+- MVC
+  - `model.js`: Contains the data model and functions to interact with the data.
+  - `view.js`: Contains functions to update the UI based on the data.
+  - `controller.js`: Contains the application logic and event listeners.
+
+## Future Enhancements
+
+- **Task Prioritization**: Allow users to set priority levels for tasks.
+- **Task Categories/Tags**: Implement categories or tags for better organization.
+- **Advanced Sorting**: Sort tasks by date, priority, or completion status.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

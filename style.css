@@ -1,0 +1,109 @@
+/* Base styling for the body and container */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Styling for the title */
+h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+/* Row for input and button */
+.row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #5cb85c;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+/* Styling for task list */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #eee;
+  padding: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+li.checked {
+  background-color: #d6d6d6;
+  text-decoration: line-through;
+  color: #777;
+}
+
+li:hover {
+  background-color: #d6d6d6;
+}
+
+span.close {
+  color: #ff6347;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="date"], input[type="time"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-right: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Adjust the width of text input to balance the additional inputs */
+input[type="text"] {
+  flex-grow: 2; /* Allocate more space to text input */
+}
