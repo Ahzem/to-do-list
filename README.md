@@ -2,7 +2,8 @@
 
 This To-Do List application is a simple yet powerful tool to manage day-to-day tasks with the added functionality of setting due dates and times, similar to professional project management tools like Trello or GitHub Projects. It utilizes the MVC (Model-View-Controller) architecture to ensure a clean separation of concerns between the data (model), user interface (view), and the logic that handles input and updates (controller).
 
-![To-Do List Application](./assets/Screenshot.png)
+
+![Screenshot](https://github.com/Ahzem/to-do-list/assets/123859613/c03a8d7b-c266-4e80-8377-316a9e657968)
 
 ## Features
 
