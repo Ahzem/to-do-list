@@ -6,7 +6,16 @@ class TaskView {
         this.prioritySelect = document.getElementById('priority-select');
         this.addTaskButton = document.getElementById('add-button');
         this.listContainer = document.getElementById('list-container');
-        this.isEventBound = false; // Flag to track if event listeners are already bound
+        this.isEventBound = false; // Flag to track if event listeners are already bound0
+        this.listContainer.addEventListener('click', (event) => {
+            // Check if the click is on a task row itself, not just the remove button
+            if (event.target.className.includes('task-row') || event.target.parentNode.className.includes('task-row')) {
+                const index = Array.from(this.listContainer.children).indexOf(
+                    event.target.closest('.task-row') // Ensures we target the li element, not child elements
+                );
+                this.controller.toggleTask(index);
+            }
+        });
     }
 
     setController(controller) {
@@ -36,7 +45,7 @@ class TaskView {
         this.listContainer.innerHTML = '';
         tasks.forEach((task, index) => {
             const li = document.createElement('li');
-            li.className = 'task-row';
+            li.className = 'task-row' + (task.completed ? ' checked' : ''); // Add 'checked' class if completed
             li.innerHTML = `
                 <div class="task-desc">${task.content}</div>
                 <div class="task-date">${task.dueDate || 'N/A'}</div>
@@ -44,8 +53,7 @@ class TaskView {
                 <div class="task-priority">${task.priority}</div>
                 <button class="task-remove-btn" data-index="${index}">✖</button>
             `;
-            if (task.completed) li.classList.add('checked');
             this.listContainer.appendChild(li);
         });
-    }
+    }    
 }

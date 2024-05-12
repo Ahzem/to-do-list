@@ -20,6 +20,11 @@ class TaskController {
       this.model.removeTask(index);
       this.view.displayTasks(this.model.tasks);
   }
+
+  toggleTask(index) {
+    this.model.toggleTask(index);
+    this.view.displayTasks(this.model.tasks); // Redraw tasks to reflect changes
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {

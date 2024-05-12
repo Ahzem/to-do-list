@@ -19,6 +19,7 @@ class TaskModel {
     toggleTask(index) {
         this.tasks[index].completed = !this.tasks[index].completed;
         this.updateLocalStorage();
+        
     }
 
     updateLocalStorage() {

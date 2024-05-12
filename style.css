@@ -91,7 +91,7 @@ li:hover {
 }
 
 /* Styling for tasks that are checked off */
-li.checked {
+.task-raw div .checked {
   text-decoration: line-through;
   color: #777; /* Grayed out for checked tasks */
 }
@@ -99,7 +99,7 @@ li.checked {
 /* Close button for deleting tasks */
 span.close {
   color: #ff6347; /* Tomato color for visibility and contrast */
-  margin-left: 15px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
