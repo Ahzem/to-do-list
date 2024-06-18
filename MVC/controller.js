@@ -1,42 +1,42 @@
 // Controller
-class TaskController {
-  constructor(model, view) {
-      this.model = model;
-      this.view = view;
+class TaskController { // Controller class
+  constructor(model, view) { // Initialize the controller with model and view
+      this.model = model; // Set the model
+      this.view = view; // Set the view
       this.view.setController(this); // Ensuring the view has a reference to the controller.
   }
 
   onInit() {
       // Load tasks from model and display them in the view.
-      this.view.displayTasks(this.model.tasks);
+      this.view.displayTasks(this.model.tasks); // Display the tasks in the view
   }
 
-  addTask(content, dueDate, dueTime, priority) {
-      this.model.addTask(content, dueDate, dueTime, priority);
-      this.view.displayTasks(this.model.tasks);
+  addTask(content, dueDate, dueTime, priority) { // Method to add a new task
+      this.model.addTask(content, dueDate, dueTime, priority); // Call the model method to add a task
+      this.view.displayTasks(this.model.tasks); // Redraw tasks to reflect changes
   }
 
-  removeTask(index) {
-      this.model.removeTask(index);
-      this.view.displayTasks(this.model.tasks);
+  removeTask(index) { // Method to remove a task
+      this.model.removeTask(index); // Call the model method to remove a task
+      this.view.displayTasks(this.model.tasks); // Redraw tasks to reflect changes
   }
 
-  toggleTask(index) {
-    this.model.toggleTask(index);
+  toggleTask(index) { // Method to toggle the completion status of a task
+    this.model.toggleTask(index); // Call the model method to toggle the task completion status
     this.view.displayTasks(this.model.tasks); // Redraw tasks to reflect changes
 }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const model = new TaskModel();
-  const view = new TaskView();
-  const controller = new TaskController(model, view);
+document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM content to load
+  const model = new TaskModel(); // Initialize the model
+  const view = new TaskView(); // Initialize the view
+  const controller = new TaskController(model, view); // Initialize the controller with model and view
 
   controller.onInit(); // Now safe to call, as all components are properly initialized.
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM content to load.
   const model = new TaskModel(); // Model is initialized first.
   const view = new TaskView();   // View is initialized second.
   const controller = new TaskController(model, view); // Controller is initialized last and given references to both model and view.
