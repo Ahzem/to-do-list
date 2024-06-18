@@ -26,4 +26,3 @@ class TaskModel { // Class to handle the tasks
         localStorage.setItem('tasks', JSON.stringify(this.tasks)); // Store the tasks array in local storage
     }
 }
-

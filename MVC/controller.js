@@ -27,20 +27,10 @@ class TaskController { // Controller class
 }
 }
 
-document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM content to load
-  const model = new TaskModel(); // Initialize the model
-  const view = new TaskView(); // Initialize the view
-  const controller = new TaskController(model, view); // Initialize the controller with model and view
-
-  controller.onInit(); // Now safe to call, as all components are properly initialized.
-});
-
-
 document.addEventListener('DOMContentLoaded', () => { // Wait for the DOM content to load.
   const model = new TaskModel(); // Model is initialized first.
   const view = new TaskView();   // View is initialized second.
   const controller = new TaskController(model, view); // Controller is initialized last and given references to both model and view.
-
-  view.setController(controller); // Make sure the view knows about the controller.
+  
   controller.onInit();            // Now call onInit, ensuring all references are set.
 });
